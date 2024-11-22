@@ -1,19 +1,12 @@
-# next-forge
+# Pixify  
 
-**Production-grade Turborepo template for Next.js apps.**
+Pixify is a powerful and intuitive tool designed to help you create stunning, custom icons effortlessly.  
 
-[next-forge](https://github.com/haydenbleasel/next-forge) is a [Next.js](https://nextjs.org/) project boilerplate for modern web application. It is designed to be a comprehensive starting point for new apps, providing a solid, opinionated foundation with a minimal amount of configuration.
+🚧 **This project is currently under development.**  
 
-Clone the repo using:
+## Features (Coming Soon)  
+- Intuitive icon design tools.  
+- A vast library of customizable templates.  
+- Export icons in multiple formats.  
+- AI-powered suggestions for designs.  
 
-```sh
-npx next-forge@latest init [my-project]
-```
-
-Then read the [docs](https://docs.next-forge.com) for more information.
-
-<a href="https://github.com/haydenbleasel/next-forge/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=haydenbleasel/next-forge" />
-</a>
-
-Made with [contrib.rocks](https://contrib.rocks).
