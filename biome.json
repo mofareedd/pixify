@@ -6,5 +6,19 @@
       "packages/design-system/lib/**",
       "packages/design-system/hooks/**"
     ]
+  },
+  "linter": {
+    "rules": {
+      "style": {
+        "useNamingConvention": "off",
+        "useSelfClosingElements": "off"
+      },
+      "performance": {
+        "noBarrelFile": "off"
+      },
+      "nursery": {
+        "useSortedClasses": "off"
+      }
+    }
   }
 }
