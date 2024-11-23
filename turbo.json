@@ -12,7 +12,6 @@
         "CLERK_SECRET_KEY",
         "CLERK_WEBHOOK_SECRET",
         "DATABASE_URL",
-        "FLAGS_SECRET",
         "STRIPE_SECRET_KEY",
         "RESEND_AUDIENCE_ID",
         "RESEND_FROM",

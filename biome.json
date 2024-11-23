@@ -4,8 +4,21 @@
     "ignore": [
       "packages/design-system/components/ui/**",
       "packages/design-system/lib/**",
-      "packages/design-system/hooks/**",
-      "apps/docs/**/*.json"
+      "packages/design-system/hooks/**"
     ]
+  },
+  "linter": {
+    "rules": {
+      "style": {
+        "useNamingConvention": "off",
+        "useSelfClosingElements": "off"
+      },
+      "performance": {
+        "noBarrelFile": "off"
+      },
+      "nursery": {
+        "useSortedClasses": "off"
+      }
+    }
   }
 }

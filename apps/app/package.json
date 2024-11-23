@@ -16,7 +16,6 @@
     "@repo/database": "workspace:*",
     "@repo/design-system": "workspace:*",
     "@repo/env": "workspace:*",
-    "@repo/feature-flags": "workspace:*",
     "@repo/next-config": "workspace:*",
     "@repo/security": "workspace:*",
     "@repo/seo": "workspace:*",

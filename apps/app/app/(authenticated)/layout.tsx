@@ -1,6 +1,5 @@
 import { auth, currentUser } from '@repo/auth/server';
 import { SidebarProvider } from '@repo/design-system/components/ui/sidebar';
-import { showBetaFeature } from '@repo/feature-flags';
 import arcjet, { detectBot, request } from '@repo/security';
 import type { ReactNode } from 'react';
 import { PostHogIdentifier } from './components/posthog-identifier';
@@ -35,7 +34,6 @@ const AppLayout = async ({ children }: AppLayoutProperties) => {
 
   const user = await currentUser();
   const { redirectToSignIn } = await auth();
-  const betaFeature = await showBetaFeature();
 
   if (!user) {
     redirectToSignIn();
@@ -43,14 +41,7 @@ const AppLayout = async ({ children }: AppLayoutProperties) => {
 
   return (
     <SidebarProvider>
-      <GlobalSidebar>
-        {betaFeature && (
-          <div className="m-4 rounded-full bg-success p-1.5 text-center text-sm text-success-foreground">
-            Beta feature now available
-          </div>
-        )}
-        {children}
-      </GlobalSidebar>
+      <GlobalSidebar>{children}</GlobalSidebar>
       <PostHogIdentifier />
     </SidebarProvider>
   );
