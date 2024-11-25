@@ -1,0 +1,17 @@
+{
+  "extends": "@pixify/typescript-config/react-library.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "paths": {
+      "@pixify/*": ["../*"],
+      "@pixify/ui/*": ["./*"]
+    }
+  },
+  "include": ["**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules"]
+}

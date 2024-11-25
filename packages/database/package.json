@@ -1,0 +1,31 @@
+{
+  "name": "@pixify/database",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "db:generate": "prisma generate",
+    "db:push": "pnpm with-env prisma db push --skip-generate",
+    "db:pull": "pnpm with-env prisma db pull",
+    "with-env": "dotenv -e ../../.env.local --"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@neondatabase/serverless": "^0.10.3",
+    "@prisma/adapter-neon": "^5.22.0",
+    "@prisma/client": "^5.22.0",
+    "undici": "^6.21.0",
+    "ws": "^8.18.0"
+  },
+  "devDependencies": {
+    "@pixify/typescript-config": "workspace:*",
+    "@types/node": "^22.9.3",
+    "@types/ws": "^8.5.13",
+    "bufferutil": "^4.0.8",
+    "dotenv-cli": "^7.4.4",
+    "prisma": "^5.22.0",
+    "typescript": "5.5.4"
+  }
+}
