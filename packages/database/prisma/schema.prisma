@@ -10,18 +10,18 @@ datasource db {
 }
 
 model Logo {
-  id         String   @id
+  id         String   @id @default(uuid())
   name       String
   userId     String
   templateId String
   createdAt  DateTime @default(now())
-  updateddAt DateTime
+  updatedAt  DateTime @updatedAt
 
   @@index([templateId])
 }
 
 model LogoVersion {
-  id            String   @id
+  id            String   @id @default(uuid())
   logoId        String
   versionNumber Int
   prompt        String
@@ -30,14 +30,14 @@ model LogoVersion {
   imageUrl      String
   modelId       String
   createdAt     DateTime @default(now())
-  updateddAt    DateTime
+  updatedAt     DateTime @updatedAt
 
   @@index([logoId])
   @@index([modelId])
 }
 
 model ModelType {
-  id                     String   @id
+  id                     String   @id @default(uuid())
   name                   String
   description            String
   provider               String
@@ -45,16 +45,16 @@ model ModelType {
   pricingPerRequest      Float
   status                 String?  @default("pending")
   createdAt              DateTime @default(now())
-  updatedAt              DateTime
+  updatedAt              DateTime @updatedAt
 }
 
 model Template {
-  id          String   @id
+  id          String   @id @default(uuid())
   name        String
   description String
   imageUrl    String
   createdAt   DateTime @default(now())
-  updateddAt  DateTime
+  updatedAt   DateTime @updatedAt
 }
 
 enum Format {

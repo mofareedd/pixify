@@ -1,0 +1,19 @@
+{
+  "name": "api",
+  "scripts": {
+    "dev": "bun run --hot src/index.ts"
+  },
+  "dependencies": {
+    "@hono/zod-validator": "^0.4.1",
+    "@pixify/database": "workspace:*",
+    "hono": "^4.6.12",
+    "openai": "^4.73.1",
+    "uploadthing": "^7.3.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@pixify/typescript-config": "workspace:*",
+    "@types/bun": "latest",
+    "dotenv": "^16.4.5"
+  }
+}
