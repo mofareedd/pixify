@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import { Hero } from './_components/hero';
 
 const meta = {
-  title: 'Pixify: AI-Powered Logo Design Tool',
+  title: 'AI-Powered Logo Design Tool',
   description:
     'Create stunning logos in seconds with Pixify, the ultimate AI-powered logo design platform. Turn your ideas into professional designs effortlessly.',
 };
