@@ -1,23 +1,15 @@
-// import 'dotenv/config';
-import { Hono } from 'hono';
-import { createRouteHandler } from 'uploadthing/server';
-import { uploadRouter } from './lib/uploadthing';
+import { newApp } from './lib/app';
+import { init } from './lib/middleware/init';
 import { templateRoute } from './routes/template';
 
-const handlers = createRouteHandler({
-  router: uploadRouter,
-  config: {},
-});
+const app = newApp();
 
-const app = new Hono();
-const apiRoutes = app
+app.use('*', init());
+const routes = app
   .basePath('/api')
-  .route('/template', templateRoute)
-  .all('/api/uploadthing', (context) => handlers(context.req.raw));
-
-export default {
-  port: 1337,
-  fetch: app.fetch,
-};
-
-export type AppType = typeof apiRoutes;
+  .get('/', (c) => {
+    return c.text('hello');
+  })
+  .route('/template', templateRoute);
+export type AppType = typeof routes;
+export default app;
