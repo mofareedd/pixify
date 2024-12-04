@@ -1,5 +1,5 @@
 import { newApp } from './lib/app';
-import { init } from './lib/middleware/init';
+import { init } from './middleware/init';
 import { templateRoute } from './routes/template';
 
 const app = newApp();

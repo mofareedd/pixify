@@ -1,26 +1,40 @@
+// @ts-ignore
+import { zValidator } from '@hono/zod-validator';
+import { eq, schema } from '@pixify/db';
 import { newApp } from '../lib/app';
+import { createTemplateSchema } from '../lib/schema';
 
-const templateRoute = newApp().get('/', async (c) => {
-  const { db } = c.get('services');
-  const templates = await db.query.templates.findMany({
-    with: {
-      image: true,
-    },
+const templateRoute = newApp()
+  .get('/', async (c) => {
+    const { db } = c.get('services');
+    const templates = await db.query.templates.findMany({
+      with: {
+        image: true,
+      },
+    });
+
+    return c.json(templates);
+  })
+  .post('/', zValidator('json', createTemplateSchema), async (c) => {
+    const validated = c.req.valid('json');
+    const { db } = c.get('services');
+
+    const image = await db.query.images.findFirst({
+      where: eq(schema.images.id, validated.imageId),
+    });
+
+    if (!image) {
+      return c.json({ message: 'There is no image found with this id' }, 404);
+    }
+
+    await db.insert(schema.templates).values({
+      name: validated.name,
+      description: validated.description,
+      imageId: image.id,
+    });
+
+    return c.json({ message: 'template created' }, 201);
   });
-
-  return c.json(templates);
-});
-// .post('/', zValidator('json', createTemplateSchema), async (c) => {
-//   const validated = c.req.valid('json');
-//   const { db } = c.get('services');
-
-//   await db.insert(schema.templates).values({
-//     name: validated.name,
-//     description: validated.description,
-//   });
-
-//   return c.json({ message: 'template created' }, 201);
-// });
 // .get('/:id', async (c) => {
 //   const template = await db.template.findFirst({
 //     where: {

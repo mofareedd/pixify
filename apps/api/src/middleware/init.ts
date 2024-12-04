@@ -1,6 +1,6 @@
 import type { MiddlewareHandler } from 'hono';
-import { createConnection } from '../db';
-import type { HonoEnv } from '../env';
+import { createConnection } from '../lib/db';
+import type { HonoEnv } from '../lib/env';
 
 export function init(): MiddlewareHandler<HonoEnv> {
   return async (c, next) => {
@@ -10,7 +10,6 @@ export function init(): MiddlewareHandler<HonoEnv> {
 
     c.set('services', { db: primary });
 
-    console.log('INIT()');
     await next();
   };
 }

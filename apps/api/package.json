@@ -5,6 +5,7 @@
     "deploy": "wrangler deploy --minify"
   },
   "dependencies": {
+    "@aws-sdk/client-s3": "^3.705.0",
     "@hono/zod-validator": "^0.4.1",
     "@neondatabase/serverless": "^0.10.3",
     "@pixify/db": "workspace:*",

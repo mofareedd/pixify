@@ -23,6 +23,7 @@
   "[typescriptreact]": {
     "editor.defaultFormatter": "biomejs.biome"
   },
+  "yamlfmt.args": [],
   "files.exclude": {
     "**/.git": true,
     "**/.svn": true,
